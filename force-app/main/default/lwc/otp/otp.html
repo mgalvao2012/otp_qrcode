@@ -1,0 +1,21 @@
+<template>
+  <lightning-card title={title} icon-name={iconName}>
+    <div class="slds-m-around_medium">
+      <div if:true={secret}>
+        <p class="slds-text-heading_medium">
+          <span class="slds-m-bottom_x-small">{code}</span
+          ><lightning-progress-ring
+            value={ringCounter}
+            variant={ringVariant}
+            class="slds-m-left_small"
+          ></lightning-progress-ring>
+        </p>        
+        <p>Refreshing in {refreshCounter} second(s)</p> 
+      </div>
+      <div if:false={secret}>
+        <p>Secret not defined.</p>
+      </div>
+      <div class="qrcode2" id="qrcode2" style="height:200px;width:200px"></div>
+    </div>
+  </lightning-card>
+</template>
